@@ -17,6 +17,7 @@ public class Agent {
 	
 	@Id
     //@GeneratedValue(strategy = GenerationType.SEQUENCE, generator="seq")
+	@GeneratedValue(strategy = GenerationType.TABLE)
     private Long id;
 	private String advertiserName;
 }

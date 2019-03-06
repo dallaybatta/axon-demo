@@ -37,8 +37,8 @@ public class AxonTestAPI {
 	}
 	
 	@RequestMapping(value = "agency", method = RequestMethod.DELETE)
-    public CompletableFuture<String> removeAgency(HttpServletRequest request) throws InterruptedException, ExecutionException {
-		String id = request.getParameter("id");
+    public CompletableFuture<String> removeAgency(@RequestBody Map<String, String> request) throws InterruptedException, ExecutionException {
+		String id = request.get("id");
         return commandGateway.send(new AgentDeleteCommand(id));
 	}
 	

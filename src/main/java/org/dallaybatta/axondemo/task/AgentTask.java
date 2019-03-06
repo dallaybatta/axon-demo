@@ -46,7 +46,7 @@ public class AgentTask {
 	void on(AgentCreatedEvent event,@Autowired AgentRepository agencyRepository) {
 		Agent agent = new Agent();
 		agent.setAdvertiserName(event.getName());
-		agent.setId(Long.valueOf(event.getId()));
+		//agent.setId(Long.valueOf(event.getId()));
 		agent = agencyRepository.save(agent);
 		System.out.println("Created Agent by Id "+agent.getId());
 		this.id = Utility.CREATE+agent.getId().toString();
