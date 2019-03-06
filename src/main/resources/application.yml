@@ -1,0 +1,10 @@
+server.port: 9082
+spring:
+  datasource:
+    url: jdbc:h2:file:./target/axon-sample
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  jpa:
+    generate-ddl: true
+    #hibernate.ddl-auto: update
