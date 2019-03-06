@@ -30,7 +30,7 @@ public class AxonTestAPI {
     }
 	
 	@RequestMapping(value = "agency", method = RequestMethod.POST)
-    public CompletableFuture<String> createAdvertiser(@RequestBody Map<String, String> request) {
+    public CompletableFuture<String> createAgency(@RequestBody Map<String, String> request) {
 		String id = request.get("id");
 		String agentName = request.get("name");
         return commandGateway.send(new AgentCreateCommand(id,agentName));
