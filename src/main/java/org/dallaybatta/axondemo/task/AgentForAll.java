@@ -37,7 +37,7 @@ public class AgentForAll {
 	
 	@EventSourcingHandler
 	void on(AgentCreatedEvent event) {
-		this.id = Utility.CREATE+event.getId();
+		this.id = event.getId();
 		System.out.println("Created Agent by Id(EventSourcingHandler) "+event.getId());
 	}	
 	
@@ -53,7 +53,7 @@ public class AgentForAll {
 	
 	@EventSourcingHandler
 	void on(AgentUpdateEvent event,@Autowired AgentRepository agencyRepository) {
-		this.id = Utility.UPDATE+event.getId();
+		this.id = event.getId();
 	}	
 	
 	@CommandHandler
@@ -66,7 +66,7 @@ public class AgentForAll {
 	
 	@EventSourcingHandler
 	void on(AgentDeleteEvent event,@Autowired AgentRepository agencyRepository) {
-		this.id = Utility.DELETE+event.getId();
+		this.id = event.getId();
 	}		
 }
 
