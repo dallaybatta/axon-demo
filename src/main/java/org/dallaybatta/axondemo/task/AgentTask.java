@@ -19,17 +19,17 @@ import static org.axonframework.commandhandling.model.AggregateLifecycle.apply;
 
 // An Aggregate is a regular object, which contains state and methods to alter that state
 @Aggregate
-public class AgentForAll {	
+public class AgentTask {	
     
 	@AggregateIdentifier
 	private String id;
 	
-	AgentForAll(){
+	AgentTask(){
 		
 	}
 	
 	@CommandHandler
-	public AgentForAll(AgentCreateCommand command) {
+	public AgentTask(AgentCreateCommand command) {
 		System.out.println("Creating Agent by Name "+command.getName()+" id "+command.getId());
 		AgentCreatedEvent event = new AgentCreatedEvent(command.getId(),command.getName());
 		apply(event);
