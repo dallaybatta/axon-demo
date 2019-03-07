@@ -2,10 +2,13 @@ package org.dallaybatta.axondemo.event;
 
 import lombok.Getter;
 import lombok.Setter;
-
+import lombok.Value;
+@Value
+@Getter
+@Setter
 public class AgentCreatedEvent {
 
-	@Getter @Setter private String id;
-	@Getter @Setter private String name;
+	private String id;
+	private String name;
 
 }

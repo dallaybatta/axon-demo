@@ -8,3 +8,10 @@ spring:
   jpa:
     generate-ddl: true
     #hibernate.ddl-auto: update
+logging:
+ level:
+  # ROOT: TRACE
+  # org.springframework.security: TRACE
+  org.axonframework.tes: TRACE
+axon-demo:
+ direct: true
